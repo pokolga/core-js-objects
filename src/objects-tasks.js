@@ -45,8 +45,8 @@ function mergeObjects(objects) {
     res[sel] = 0;
   });
   objects.forEach((elem) => {
-    Object.keys(elem).forEach((par) => {
-      res[par] += elem[par];
+    Object.entries(elem).forEach((par) => {
+      res[par[0]] += par[1];
     });
   });
   return res;
@@ -325,8 +325,15 @@ function sortCitiesArray(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-  throw new Error('Not implemented');
+function group(array, keySelector, valueSelector) {
+  const result = new Map();
+  array.forEach((item) => {
+    if (!result.has(keySelector(item))) {
+      result.set(keySelector(item), []);
+    }
+    result.get(keySelector(item)).push(valueSelector(item));
+  });
+  return result;
 }
 
 /**
