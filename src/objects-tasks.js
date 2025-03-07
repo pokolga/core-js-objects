@@ -53,7 +53,7 @@ function mergeObjects(objects) {
 }
 
 /**
- * Removes a properties from an object.
+ * Removes  a properties from an object.
  *
  * @param {Object} obj - The object from which to remove the property
  * @param {Array} keys - The keys of the properties to remove
