@@ -21,6 +21,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    "max-classes-per-file": 10,
   },
   plugins: ['prettier'],
   noInlineConfig: true,
